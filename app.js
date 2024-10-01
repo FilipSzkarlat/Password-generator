@@ -127,3 +127,10 @@ generatePasswordsBtn.addEventListener("click", () => {
     }
   }
 });
+
+passwordLength.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    generatePasswordsBtn.click();
+  }
+});
