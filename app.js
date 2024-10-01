@@ -94,10 +94,11 @@ const characters = [
 
 let password1EL = document.querySelector(".password1-el");
 let password2EL = document.querySelector(".password2-el");
+let passwordLength = document.querySelector("#length-number");
 
 function generatePasswords() {
   let password = "";
-  for (let i = 0; i < 15; i++) {
+  for (let i = 0; i < Number(passwordLength.value); i++) {
     password += characters[randomChar()];
   }
   return password;

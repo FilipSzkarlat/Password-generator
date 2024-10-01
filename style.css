@@ -27,13 +27,16 @@ p {
   color: #4adf86;
 }
 
+form {
+  margin: 40px 0 20px;
+}
+
 button {
   background-color: #10b981;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  margin-top: 50px;
 }
 
 hr {
