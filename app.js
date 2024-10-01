@@ -95,6 +95,8 @@ const characters = [
 let password1EL = document.querySelector(".password1-el");
 let password2EL = document.querySelector(".password2-el");
 let passwordLength = document.querySelector("#length-number");
+let generatePasswordsBtn = document.querySelector(".generate-passwords");
+const passwordContainerEl = document.querySelector(".password-container");
 
 function generatePasswords() {
   let password = "";
@@ -112,3 +114,16 @@ function createPasswords() {
   password1EL.textContent = generatePasswords();
   password2EL.textContent = generatePasswords();
 }
+
+generatePasswordsBtn.addEventListener("click", () => {
+  if (Number(passwordLength.value) > 40) {
+    alert(
+      "Sorry, but the maxI'm sorry but the maximum password length is 40 characters"
+    );
+  } else {
+    createPasswords();
+    if (Number(passwordLength.value) > 16) {
+      passwordContainerEl.style.flexDirection = "column";
+    }
+  }
+});

@@ -55,7 +55,9 @@ hr {
   justify-content: center;
   align-items: center;
   background-color: #273549;
-  width: 210px;
+  min-width: 210px;
   height: 40px;
   border-radius: 5px;
+  padding: 10px 20px;
+  margin: 10px;
 }
