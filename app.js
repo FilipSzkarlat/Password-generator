@@ -51,16 +51,11 @@ const characters = [
   "x",
   "y",
   "z",
-  "0",
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
+];
+
+const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+const symbols = [
   "~",
   "`",
   "!",
@@ -97,17 +92,29 @@ let password2EL = document.querySelector(".password2-el");
 let passwordLength = document.querySelector("#length-number");
 let generatePasswordsBtn = document.querySelector(".generate-passwords");
 const passwordContainerEl = document.querySelector(".password-container");
+const symbolsCheckbox = document.querySelector("#symbols");
+const numbersCheckbox = document.querySelector("#numbers");
+let thisArray = [];
 
 function generatePasswords() {
   let password = "";
   for (let i = 0; i < Number(passwordLength.value); i++) {
-    password += characters[randomChar()];
+    password += thisArray[randomChar()];
   }
   return password;
 }
 
+function validate() {
+  thisArray = characters;
+  if (symbolsCheckbox.checked && numbersCheckbox.checked)
+    thisArray = thisArray.concat(symbols, numbers);
+  else if (symbolsCheckbox.checked) thisArray = thisArray.concat(symbols);
+  else if (numbersCheckbox.checked) thisArray = thisArray.concat(numbers);
+  return thisArray;
+}
+
 function randomChar() {
-  return Math.floor(Math.random() * characters.length);
+  return Math.floor(Math.random() * thisArray.length);
 }
 
 function createPasswords() {
@@ -116,6 +123,7 @@ function createPasswords() {
 }
 
 generatePasswordsBtn.addEventListener("click", () => {
+  validate();
   if (Number(passwordLength.value) > 40) {
     alert(
       "Sorry, but the maxI'm sorry but the maximum password length is 40 characters"
