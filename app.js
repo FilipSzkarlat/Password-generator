@@ -134,3 +134,15 @@ passwordLength.addEventListener("keypress", (e) => {
     generatePasswordsBtn.click();
   }
 });
+
+password1EL.addEventListener("click", () => {
+  navigator.clipboard.writeText(password1EL.textContent);
+  alert(`Password: ${password1EL.textContent}
+    has been copied`);
+});
+
+password2EL.addEventListener("click", () => {
+  navigator.clipboard.writeText(password2EL.textContent);
+  alert(`Password: ${password2EL.textContent}
+    has been copied`);
+});

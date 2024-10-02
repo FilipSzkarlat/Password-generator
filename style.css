@@ -60,4 +60,10 @@ hr {
   border-radius: 5px;
   padding: 10px 20px;
   margin: 10px;
+  transition: all 0.5s;
+}
+
+.password-box:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
