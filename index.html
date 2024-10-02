@@ -28,11 +28,21 @@
         <label for="length-number">Length number (max 40)</label>
         <br />
         <input id="length-number" type="number" value="16" /> <br />
-        <input type="checkbox" id="symbols" />
-        <label for="symbols">Symbols</label> <br />
-        <input type="checkbox" id="numbers" />
-        <label for="numbers">Numbers</label>
+
+        <label for="symbols" class="switch">
+          <input type="checkbox" id="symbols" class="toggle" />
+          <span class="slider round"></span>
+          <p>Symbols</p>
+        </label>
+        <br />
+
+        <label for="numbers" class="switch">
+          <input type="checkbox" id="numbers" class="toggle" />
+          <span class="slider round"></span>
+          <p>Numbers</p>
+        </label>
       </form>
+
       <button class="generate-passwords">Generate passwords</button>
       <hr />
       <div class="password-container">
